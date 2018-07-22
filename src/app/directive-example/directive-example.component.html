@@ -1,0 +1,45 @@
+<br>
+<div align="center">
+    <h1>Directives</h1>
+</div>
+
+
+<p><b>ngIf</b></p>
+
+<button class="btn btn-primary" type="button" name="button" (click) = "toogleHero()">Toogle</button>
+
+<div *ngIf="toogleHeroFlag">
+    <div class="" *ngFor="let hero of dcHeroes; let i= index">
+        {{ i+1 }}){{ hero }}
+    </div>
+</div>
+
+
+<hr>
+<p><b>ngFor</b></p>
+<div class="" *ngFor="let hero of dcHeroes; let i= index" (click)="selectHero(hero)">
+    {{ i+1 }}){{ hero }}
+</div>
+<hr>
+<br>
+<p><b>ngSwitch</b></p>
+<div [ngSwitch]="selectedHero " [ngStyle]="myStyle">
+    <div *ngSwitchCase="dcHeroes[0]">Bruce vain</div>
+    <div *ngSwitchCase="'Superman'">Clark Kent</div>
+    <div *ngSwitchCase="'Wonder Women'">Princess Diana</div>
+    <div *ngSwitchCase="'Flash'">Barrey Alen</div><br>
+    <div *ngSwitchDefault>None of the Hero's</div>
+    
+</div>
+<p><b>ngStyle</b></p>
+<button (click)="setStyle()" class="btn btn-primary">Change Style</button><br><br>
+<hr>
+
+<p><b>ngClass</b></p>
+<h2 [ngClass]="currentCSSClass">Change CSS Class Dynamically</h2>
+<button (click)="setCSSClass()" class="btn btn-primary">Change CSS Class</button><br><br>
+<hr>
+
+<p><b>ngModel</b></p>
+<h2 [style.color]="inputColor">Change of text</h2>
+<input type="text" [(ngModel)]="inputColor"><br><br>
